@@ -13,20 +13,21 @@
 <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
 
-<script>
-  // Your React code here
-  const rootElement = document.getElementById('root');
+<!-- Babel to enable JSX -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-  // Create React elements using React.createElement
+<script type="text/babel">
+  // Your React code here
   const App = () => {
-    return React.createElement('div', null,
-      React.createElement('h1', null, 'Hello, React!'),
-      React.createElement('p', null, 'This is a simple React app embedded in an HTML page.')
+    return (
+      <div>
+        <h1>Hello, React!</h1>
+        <p>This is a simple React app embedded in an HTML page.</p>
+      </div>
     );
   };
 
-  // Render the React component
-  ReactDOM.render(React.createElement(App), rootElement);
+  ReactDOM.render(<App />, document.getElementById('root'));
 </script>
 
 </body>
